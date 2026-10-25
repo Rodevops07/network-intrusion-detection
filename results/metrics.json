@@ -1,0 +1,124 @@
+{
+  "scenarios": {
+    "s1_normal": {
+      "desc": "benign baseline",
+      "flows": 3223,
+      "alerts": 0,
+      "attack_flows_true": 0,
+      "attack_flows_pred": 0,
+      "alert_types": []
+    },
+    "s2_portscan": {
+      "desc": "port scan",
+      "flows": 3022,
+      "alerts": 1,
+      "attack_flows_true": 1024,
+      "attack_flows_pred": 1024,
+      "alert_types": [
+        "Port Scan (reconnaissance)"
+      ]
+    },
+    "s3_dos": {
+      "desc": "SYN flood DoS",
+      "flows": 26727,
+      "alerts": 1,
+      "attack_flows_true": 23990,
+      "attack_flows_pred": 24045,
+      "alert_types": [
+        "Denial-of-Service (SYN flood)"
+      ]
+    },
+    "s4_bruteforce": {
+      "desc": "SSH brute-force",
+      "flows": 2405,
+      "alerts": 1,
+      "attack_flows_true": 297,
+      "attack_flows_pred": 297,
+      "alert_types": [
+        "SSH Brute-force"
+      ]
+    },
+    "s5_ambiguous": {
+      "desc": "slow scan + ARP (evasive)",
+      "flows": 3380,
+      "alerts": 2,
+      "attack_flows_true": 40,
+      "attack_flows_pred": 40,
+      "alert_types": [
+        "ARP Spoofing (MITM)",
+        "ML Anomaly - Scan-like"
+      ]
+    }
+  },
+  "flow_metrics": {
+    "accuracy": 0.9985809015145651,
+    "per_class": {
+      "benign": {
+        "precision": 1.0,
+        "recall": 0.9958973593913173,
+        "f1": 0.9979444631311433,
+        "support": 13406
+      },
+      "portscan": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1064
+      },
+      "dos": {
+        "precision": 0.9977126221667706,
+        "recall": 1.0,
+        "f1": 0.9988550015613615,
+        "support": 23990
+      },
+      "bruteforce": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 297
+      }
+    },
+    "attack_vs_benign": {
+      "precision": 0.9978351570495159,
+      "recall": 1.0,
+      "f1": 0.9989164056189294
+    },
+    "confusion_matrix": {
+      "labels": [
+        "benign",
+        "portscan",
+        "dos",
+        "bruteforce"
+      ],
+      "matrix": [
+        [
+          13351,
+          0,
+          55,
+          0
+        ],
+        [
+          0,
+          1064,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          23990,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          297
+        ]
+      ]
+    }
+  },
+  "notes": {
+    "s5_ambiguous": "Slow scan (one probe every ~12s) stays below the rate-based SCAN_PORTS/10s rule and the flood/brute rules, so the rule layer misses it - documented limitation (Scenario 5). ARP spoof in the same capture is still caught at layer 2."
+  }
+}

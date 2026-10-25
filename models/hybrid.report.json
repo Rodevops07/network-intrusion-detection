@@ -1,0 +1,90 @@
+{
+  "n_flows": 54904,
+  "class_counts": {
+    "dos": 39711,
+    "benign": 12087,
+    "portscan": 2560,
+    "bruteforce": 546
+  },
+  "train_report": {
+    "benign": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 12087.0
+    },
+    "bruteforce": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 546.0
+    },
+    "dos": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 39711.0
+    },
+    "portscan": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2560.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 54904.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 54904.0
+    }
+  },
+  "top_features": [
+    [
+      "max_iat",
+      0.09728699921530606
+    ],
+    [
+      "win_dst_ports",
+      0.09356768289244674
+    ],
+    [
+      "duration",
+      0.08708587746428878
+    ],
+    [
+      "mean_iat",
+      0.07385934192982238
+    ],
+    [
+      "win_syns",
+      0.073595095324871
+    ],
+    [
+      "mean_pkt_size",
+      0.07143847011902674
+    ],
+    [
+      "bwd_bytes",
+      0.058192053113413675
+    ],
+    [
+      "win_flows",
+      0.054876442506255695
+    ],
+    [
+      "flag_R_cnt",
+      0.04940094172360106
+    ],
+    [
+      "fwd_bytes",
+      0.04475093105328496
+    ]
+  ]
+}

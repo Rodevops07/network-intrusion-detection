@@ -1,0 +1,29 @@
+{
+  "pcap": "s5_ambiguous.pcap",
+  "packets": 84144,
+  "duration": 600.63,
+  "attacks": [
+    {
+      "attack": "portscan_slow",
+      "srcs": [
+        "10.0.0.66"
+      ],
+      "dst": "10.0.0.10",
+      "start": 60,
+      "end": 533.538,
+      "ports": 40
+    },
+    {
+      "attack": "arp_spoof",
+      "srcs": [
+        "10.0.0.66"
+      ],
+      "dst": "10.0.0.1",
+      "start": 400,
+      "end": 440,
+      "spoofed_ip": "10.0.0.1",
+      "real_mac": "02:00:0a:00:00:01",
+      "fake_mac": "02:00:0a:00:00:42"
+    }
+  ]
+}

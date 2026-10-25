@@ -1,0 +1,17 @@
+{
+  "pcap": "s4_bruteforce.pcap",
+  "packets": 55907,
+  "duration": 399.91,
+  "attacks": [
+    {
+      "attack": "ssh_bruteforce",
+      "srcs": [
+        "10.0.0.66"
+      ],
+      "dst": "10.0.0.20",
+      "start": 120,
+      "end": 239.621,
+      "attempts": 300
+    }
+  ]
+}

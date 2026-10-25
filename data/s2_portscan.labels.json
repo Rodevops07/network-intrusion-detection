@@ -1,0 +1,17 @@
+{
+  "pcap": "s2_portscan.pcap",
+  "packets": 52010,
+  "duration": 402.05,
+  "attacks": [
+    {
+      "attack": "portscan",
+      "srcs": [
+        "10.0.0.66"
+      ],
+      "dst": "10.0.0.10",
+      "start": 180,
+      "end": 210.771,
+      "ports": 1024
+    }
+  ]
+}
